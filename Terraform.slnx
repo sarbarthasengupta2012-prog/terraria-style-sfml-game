@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Terraform/Terraform.vcxproj" Id="f9dab9f1-306d-4a09-9b20-2bdecf2d6360" />
+</Solution>
