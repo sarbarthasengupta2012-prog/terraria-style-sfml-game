@@ -130,7 +130,7 @@ int main() {
                 window.close();
             }
         }
-
+        // Keybindings
         bool pressedKey = false;
         if (Keyboard::isKeyPressed(Keyboard::Key::A)) {
             plrVelocity.x = -speed * velSpeed;
@@ -153,9 +153,9 @@ int main() {
                 if (plrVelocity.x > 0.0f) plrVelocity.x = 0.0f;
             }
         }
-
+        // Downward force
         plrVelocity.y += gravity * dt;
-
+        
         if (Keyboard::isKeyPressed(Keyboard::Key::Space)) {
             if (!plrInAir && jumpTimer.getElapsedTime().asSeconds() >= jumpCooldown) {
                 plrVelocity.y = -220.0f;
@@ -189,6 +189,8 @@ int main() {
             }
         }
 
+        // Intersection checks using groundLevel's values
+
         collidingWithBlockCheck = false;
         plrPos.y += plrVelocity.y * dt;
         thedestined.position = plrPos;
@@ -220,7 +222,7 @@ int main() {
 
         float finalPositionX = plrPos.x + (playerSize[0] / 2.0f) - glowRadius;
         float finalPositionY = plrPos.y + (playerSize[1] / 2.0f) - glowRadius;
-
+        
         glowy.setPosition(Vector2f({ finalPositionX, finalPositionY }));
         glowy.setFillColor(Color(255, 255, 255, 75));
         glowy.setRadius(20.0f);
